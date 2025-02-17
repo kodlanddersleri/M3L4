@@ -55,6 +55,8 @@
             <label for="color-selector">Metin rengini ayarla</label>
             <select name="color-selector" id="color-selector">
               <option value="white" {% if selected_color == 'white' %}selected{% endif %}>Beyaz</option>
+              <option value="red" {% if selected_color == 'red' %}selected{% endif %}>Kırmızı</option>
+              <option value="green" {% if selected_color == 'green' %}selected{% endif %}>Yeşil</option>
               <option value="black" {% if selected_color == 'black' %}selected{% endif %}>Siyah</option>
               <!--Ek görev #1. Yeni renkler ekleyin -->
 
@@ -77,14 +79,14 @@
       
       <p class="text_top" style="color: {{selected_color}}; top: {{ text_top_y }}px">
         <!-- Görev #2. Değişkenleri HTML’e taşıma -->
-        <p>{{text_top}}</p>
+        {{text_top}}
       </p>
       
       <img class="meme" src="{{ url_for('serve_images', path=selected_image) }}" alt="{{ selected_image }}">
       
-      <p class="text_bottom" style="color: {{ selected_color }}; bottom: {{ text_bottom_y }}px" >
+      <p class="text_bottom" style="color: {{ selected_color }}; bottom: {{ text_bottom_y }}px">
         <!-- Görev #2. Değişkenleri HTML’e taşıma -->
-        <p>{{text_bottom}}</p>
+        {{text_bottom}}
       </p>
     </div>
     {% endblock %}
